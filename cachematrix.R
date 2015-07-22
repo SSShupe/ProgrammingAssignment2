@@ -1,7 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Utilizes R's lexical scoping rules to create a matrix and
+## an alternative "Solve()" function. Together these allow for the
+## computation of the inverse of the created matrix to be cached
+## so that the value need not be recomputed by R each time it is needed. 
 
-## Write a short comment describing this function
+## The following code creates a function that creates an object to
+## create, store, and retrieve a matrix and the value of the inverse
+## of that matrix.
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -18,7 +22,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## The function below calculates the inverse of the matrix created by
+## the function above. If the inverse has been calculated previously, the
+## function retrieves it from the cache; if not, it calculates the
+## inverse using the "Solve()" function and then caches it.
 
 cacheSolve <- function(x) {
         ## Return a matrix that is the inverse of 'x'
